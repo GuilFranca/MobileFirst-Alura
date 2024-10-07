@@ -1,0 +1,72 @@
+.cabeçalho__menu-hamburguer{
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/Menu.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    /* com inline-block é possível editar o tamanho da img com height e width */
+    display: inline-block; 
+    
+}
+
+.cabeçalho{
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position relative libera a possibilidade de usar top, bottom, left e right para posicionar os elementos*/
+    position: relative;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+}
+
+.container__imagem{
+    padding: 1em;
+}
+
+.lista-menu{
+    display: none;
+    /* Permite que você movimente o seu elemento de acordo com um elemento que tenha vindo antes com um position diferente de static */
+    position: absolute;
+    /* 100% pra baixo do cabeçalho */
+    top: 100%;
+    /* 100vw é o total da tela */
+    width: 60vw;
+    /* Aumentei para ficar a cima do swipper pagination */
+    z-index: 10;
+}
+
+/* O ~ funciona como uma condicional, caso o botão esteja ativado, no caso checked, será procurado o .lista-menu  */
+.container__botao:checked ~ .lista-menu{
+    display: block;
+}
+
+.lista-menu__titulo, 
+.lista-menu__item{
+    padding: 1em;
+    background-color: var(--branco);
+}
+
+.lista-menu__titulo{
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+.lista-menu__link{
+    /* O dregrade só está no background */
+    background: var(--azul-degrade);
+    /* Para funcionar em outros tipos de navegadores */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Faz com que a cor do background vá para o texto */
+    background-clip: text;
+    /* Transforma todas as letras como maiusculas */
+    text-transform: uppercase;
+}
+
+.container__botao{
+    display: none;
+}
