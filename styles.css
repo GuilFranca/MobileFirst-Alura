@@ -2,6 +2,7 @@
 @import url(styles/header.css);
 @import url(styles/banner.css);
 @import url(styles/carrossel.css);
+@import url(styles/topicos.css);
 
 /* :root é um seletor raiz do html e dentro dele foi declarado uma variável de --cor-de-fundo*/
 :root {
