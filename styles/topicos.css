@@ -15,6 +15,6 @@
     justify-content: center;
 }
  
-.tópicos .tópicos__item .tópicos__link{
-    color: var(--branco);
+.tópicos__link{
+    color: white;
 }
