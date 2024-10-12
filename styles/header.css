@@ -14,7 +14,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* position relative libera a possibilidade de usar top, bottom, left e right para posicionar os elementos*/
+    /* position relative libera a possibilidade de usar top, bottom, left e right para posicionar os elementos */
     position: relative;
 }
 
