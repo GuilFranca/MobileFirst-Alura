@@ -11,7 +11,7 @@ hr {
     display: none;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
     .rodapé {
         display: flex;
         justify-content: space-around;
@@ -43,10 +43,14 @@ hr {
         margin-left: 0.6em;
     }
 
+    .lista-rodapé__link:hover {
+        color: var(--laranja);
+    }
+
 }
 
-@media screen and (min-width: 1728px) {
-    .rodapé{
+@media screen and (min-width: 1025px) {
+    .rodapé {
         padding: 3em 0;
     }
 
@@ -54,6 +58,10 @@ hr {
         /* Por algum motivo a cor não pode ser iserida com uma váriavel aqui */
         border-left: 1px solid #858585;
         padding-left: 1em;
+    }
+
+    .lista-rodapé__link:hover {
+        color: var(--laranja);
     }
 
 }

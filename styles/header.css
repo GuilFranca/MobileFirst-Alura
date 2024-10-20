@@ -83,8 +83,18 @@
     display: none;
 }
 
+.container__botao:checked ~ .container__rotulo > .cabeçalho__menu-hamburguer{
+    /* ~ Seleciona elementos que estão depois, mas não necessariamente em seguida, do elemento especificado antes do símbolo. */
+    /* > Seleciona elementos que estão dentro do elemento especificado antes do símbolo */
+    background-image: url(../img/Menu\ Aberto.svg);
+}
 
-@media screen and (min-width: 1024px) {
+.container__botao:checked ~ .container__rotulo {
+    background: var(--azul-degrade);
+}
+
+
+@media screen and (min-width: 768px) {
     .container__titulo, .container__titulo--negrito {
         font-family: var(--fonte-secundario);
         font-size: 30px;
@@ -127,13 +137,31 @@
         width: auto;
     }
 
+    .opções__botão:checked ~ .opções__rotulo > .opções__item{
+        background: var(--azul-degrade);
+        color: white;
+    }
+
+    .opções__item{
+        padding: 2em 1em;
+    }
+
+    .lista-menu__item:hover{
+        background: var(--azul-degrade);
+    }
+
+    .lista-menu__item:hover > .lista-menu__link{
+        -webkit-text-fill-color: var(--branco);
+        text-decoration: none;
+    }
+
     .opções__botão {
         display: none;
     }
 
 }
 
-@media screen and (min-width: 1728px) {
+@media screen and (min-width: 1025px) {
     .container__texto {
         display: block;
     }
@@ -154,4 +182,24 @@
         /* No display flex quando utilizamos alguma posição no margin e colocamos auto, ele vai tentar preencher todo o espaço que está sobrando */
         margin-right: auto;
     }
+
+    .opções__botão:checked ~ .opções__rotulo > .opções__item{
+        background: var(--azul-degrade);
+        color: white;
+    }
+
+    .opções__item{
+        padding: 2em 1em;
+    }
+
+    .lista-menu__item:hover{
+        background: var(--azul-degrade);
+    }
+
+    .lista-menu__item:hover > .lista-menu__link{
+        /* -webit server para colocar a cor branca já que antes colocamos a cor azul degrade com o mesmo */
+        -webkit-text-fill-color: var(--branco);
+        text-decoration: none;
+    }
+
 }
