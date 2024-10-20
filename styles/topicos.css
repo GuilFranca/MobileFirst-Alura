@@ -39,6 +39,10 @@
         font-size: 24px;
     }
 
+    .tópicos__link {
+        transition: 0.4s;
+    }
+
     .tópicos__link:hover {
         color: var(--laranja);
         background-color: var(--branco);
@@ -49,6 +53,11 @@
 @media screen and (min-width: 1025px) {
     .tópicos {
         padding: 3em 20vw;
+    }
+
+    
+    .tópicos__link {
+        transition: 0.4s;
     }
 
     .tópicos__link:hover {
