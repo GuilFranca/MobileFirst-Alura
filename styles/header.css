@@ -1,33 +1,33 @@
-.cabeçalho__menu-hamburguer{
+.cabeçalho__menu-hamburguer {
     width: 24px;
     height: 24px;
     background-image: url(../img/Menu.svg);
     background-repeat: no-repeat;
     background-position: center;
     /* com inline-block é possível editar o tamanho da img com height e width */
-    display: inline-block; 
-    
+    display: inline-block;
+
 }
 
-.cabeçalho{
+.cabeçalho {
     background-color: var(--branco);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* position relative libera a possibilidade de usar top, bottom, left e right para posicionar os elementos*/
+    /* position relative libera a possibilidade de usar top, bottom, left e right para posicionar os elementos */
     position: relative;
 }
 
-.container{
+.container {
     display: flex;
     align-items: center;
 }
 
-.container__imagem{
+.container__imagem {
     padding: 1em;
 }
 
-.lista-menu{
+.lista-menu {
     display: none;
     /* Permite que você movimente o seu elemento de acordo com um elemento que tenha vindo antes com um position diferente de static */
     position: absolute;
@@ -40,22 +40,22 @@
 }
 
 /* O ~ funciona como uma condicional, caso o botão esteja ativado, no caso checked, será procurado o .lista-menu  */
-.container__botao:checked ~ .lista-menu{
+.container__botao:checked~.lista-menu {
     display: block;
 }
 
-.lista-menu__titulo, 
-.lista-menu__item{
+.lista-menu__titulo,
+.lista-menu__item {
     padding: 1em;
     background-color: var(--branco);
 }
 
-.lista-menu__titulo{
+.lista-menu__titulo {
     color: var(--laranja);
     font-weight: 700;
 }
 
-.lista-menu__link{
+.lista-menu__link {
     /* O dregrade só está no background */
     background: var(--azul-degrade);
     /* Para funcionar em outros tipos de navegadores */
@@ -67,64 +67,139 @@
     text-transform: uppercase;
 }
 
-.container__botao{
+.container__botao {
     display: none;
 }
 
-.container__titulo{
+.container__titulo {
     display: none;
 }
 
-.opções{
+.opções {
     display: none;
 }
 
+.container__texto {
+    display: none;
+}
 
-@media screen and (min-width: 1024px){
-    .container__titulo, .container__titulo--negrito{
+.container__botao:checked ~ .container__rotulo > .cabeçalho__menu-hamburguer{
+    /* ~ Seleciona elementos que estão depois, mas não necessariamente em seguida, do elemento especificado antes do símbolo. */
+    /* > Seleciona elementos que estão dentro do elemento especificado antes do símbolo */
+    background-image: url(../img/Menu\ Aberto.svg);
+}
+
+.container__botao:checked ~ .container__rotulo {
+    background: var(--azul-degrade);
+}
+
+
+@media screen and (min-width: 768px) {
+    .container__titulo, .container__titulo--negrito {
         font-family: var(--fonte-secundario);
         font-size: 30px;
     }
 
-    .container__titulo{
+    .container__titulo {
         font-weight: 400;
         display: block;
     }
 
-    .container__titulo--negrito{
+    .container__titulo--negrito {
         font-weight: 700;
     }
 
-    .opções{
+    .opções {
         display: flex;
     }
 
-    .opções__item{
+    .opções__item {
         padding: 0 1em;
         text-transform: uppercase;
         cursor: pointer;
     }
 
-    .opções__link{
+    .opções__link {
         text-decoration: none;
         color: var(--preto);
     }
 
-    .container__imagem--transparente{
+    .container__imagem--transparente {
         display: none;
     }
 
-    .cabeçalho__menu-hamburguer{
+    .cabeçalho__menu-hamburguer {
         display: none;
     }
 
-    .opções__botão:checked ~ .lista-menu{
+    .opções__botão:checked~.lista-menu {
         display: block;
         width: auto;
     }
 
-    .opções__botão{
+    .opções__botão:checked ~ .opções__rotulo > .opções__item{
+        background: var(--azul-degrade);
+        color: white;
+    }
+
+    .opções__item{
+        padding: 2em 1em;
+    }
+
+    .lista-menu__item:hover{
+        background: var(--azul-degrade);
+    }
+
+    .lista-menu__item:hover > .lista-menu__link{
+        -webkit-text-fill-color: var(--branco);
+        text-decoration: none;
+    }
+
+    .opções__botão {
         display: none;
+    }
+
+}
+
+@media screen and (min-width: 1025px) {
+    .container__texto {
+        display: block;
+    }
+
+    .container__link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--preto);
+    }
+
+    .cabeçalho {
+        padding: 0 2em;
+    }
+
+    .opções {
+        /* Colocou tudo que estava na div opções para a direita */
+        /* No display flex quando utilizamos alguma posição no margin e colocamos auto, ele vai tentar preencher todo o espaço que está sobrando */
+        margin-right: auto;
+    }
+
+    .opções__botão:checked ~ .opções__rotulo > .opções__item{
+        background: var(--azul-degrade);
+        color: white;
+    }
+
+    .opções__item{
+        padding: 2em 1em;
+    }
+
+    .lista-menu__item:hover{
+        background: var(--azul-degrade);
+    }
+
+    .lista-menu__item:hover > .lista-menu__link{
+        /* -webit server para colocar a cor branca já que antes colocamos a cor azul degrade com o mesmo */
+        -webkit-text-fill-color: var(--branco);
+        text-decoration: none;
     }
 
 }
